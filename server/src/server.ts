@@ -54,7 +54,7 @@ app.get('/games/:id/ads', async (request, response) => {
   return response.json(
     ads.map(ad => {
       return {
-        ...ads,
+        ...ad,
         weekDays: ad.weekDays.split(','),
         hourStart: convertMinutesToHourString(ad.hourStart),
         hourEnd: convertMinutesToHourString(ad.hourEnd)
@@ -97,7 +97,7 @@ app.get('/ads/:id/discord', async (request, response) => {
   })
 
   return response.json({
-    discord: ad?.discord
+    discord: ad.discord
   })
 })
 
